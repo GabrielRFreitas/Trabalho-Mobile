@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentEstacionamentosRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reservation_header"
+    tools:context=".EstacionamentosFragment">
+
+    <TextView
+        android:id="@+id/homeTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="Estacionamentos"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homePanel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/bg_reservation_panel"
+        android:paddingStart="16dp"
+        android:paddingTop="22dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/homeHeadingText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Olá, encontre sua vaga"
+            android:textColor="@color/reservation_text"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/homeSubtitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Estacionamentos disponíveis perto de você"
+            android:textColor="@color/reservation_muted"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeHeadingText" />
+
+        <ScrollView
+            android:id="@+id/homeScroll"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="18dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeSubtitleText">
+
+            <LinearLayout
+                android:id="@+id/homeCardsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/centralParkingCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="132dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_home_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/centralParkingName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Estacionamento Central"
+                        android:textColor="@color/reservation_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/centralParkingStatus"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/centralParkingStatus"
+                        android:layout_width="78dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/bg_home_status"
+                        android:gravity="center"
+                        android:text="12 vagas"
+                        android:textColor="@color/reservation_primary_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/centralLocationIcon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="14dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_location_pin_24"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/centralParkingName"
+                        app:tint="@color/reservation_primary" />
+
+                    <TextView
+                        android:id="@+id/centralAddressText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Rua Principal, 120"
+                        android:textColor="@color/reservation_muted"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/centralLocationIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/centralLocationIcon"
+                        app:layout_constraintTop_toTopOf="@id/centralLocationIcon" />
+
+                    <TextView
+                        android:id="@+id/centralPriceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="R$17,00"
+                        android:textColor="@color/reservation_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/centralLocationIcon" />
+
+                    <TextView
+                        android:id="@+id/centralDistanceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="350 m"
+                        android:textColor="@color/reservation_muted"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/centralPriceText"
+                        app:layout_constraintEnd_toStartOf="@id/centralChevron"
+                        app:layout_constraintTop_toTopOf="@id/centralPriceText" />
+
+                    <ImageView
+                        android:id="@+id/centralChevron"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron_right_24"
+                        app:layout_constraintBottom_toBottomOf="@id/centralDistanceText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/centralDistanceText"
+                        app:tint="@color/reservation_text" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/shoppingParkingCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="132dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_home_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/shoppingParkingName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Shopping Norte"
+                        android:textColor="@color/reservation_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/shoppingParkingStatus"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/shoppingParkingStatus"
+                        android:layout_width="78dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/bg_home_status"
+                        android:gravity="center"
+                        android:text="8 vagas"
+                        android:textColor="@color/reservation_primary_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/shoppingLocationIcon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="14dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_location_pin_24"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shoppingParkingName"
+                        app:tint="@color/reservation_primary" />
+
+                    <TextView
+                        android:id="@+id/shoppingAddressText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Av. das Palmeiras, 900"
+                        android:textColor="@color/reservation_muted"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/shoppingLocationIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/shoppingLocationIcon"
+                        app:layout_constraintTop_toTopOf="@id/shoppingLocationIcon" />
+
+                    <TextView
+                        android:id="@+id/shoppingPriceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="R$22,00"
+                        android:textColor="@color/reservation_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shoppingLocationIcon" />
+
+                    <TextView
+                        android:id="@+id/shoppingDistanceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,2 km"
+                        android:textColor="@color/reservation_muted"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/shoppingPriceText"
+                        app:layout_constraintEnd_toStartOf="@id/shoppingChevron"
+                        app:layout_constraintTop_toTopOf="@id/shoppingPriceText" />
+
+                    <ImageView
+                        android:id="@+id/shoppingChevron"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron_right_24"
+                        app:layout_constraintBottom_toBottomOf="@id/shoppingDistanceText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/shoppingDistanceText"
+                        app:tint="@color/reservation_text" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/avenueParkingCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="132dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_home_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/avenueParkingName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Garagem Avenida"
+                        android:textColor="@color/reservation_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/avenueParkingStatus"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/avenueParkingStatus"
+                        android:layout_width="78dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/bg_home_status"
+                        android:gravity="center"
+                        android:text="5 vagas"
+                        android:textColor="@color/reservation_primary_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/avenueLocationIcon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="14dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_location_pin_24"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/avenueParkingName"
+                        app:tint="@color/reservation_primary" />
+
+                    <TextView
+                        android:id="@+id/avenueAddressText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Av. Brasil, 451"
+                        android:textColor="@color/reservation_muted"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/avenueLocationIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/avenueLocationIcon"
+                        app:layout_constraintTop_toTopOf="@id/avenueLocationIcon" />
+
+                    <TextView
+                        android:id="@+id/avenuePriceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="R$15,00"
+                        android:textColor="@color/reservation_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/avenueLocationIcon" />
+
+                    <TextView
+                        android:id="@+id/avenueDistanceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="900 m"
+                        android:textColor="@color/reservation_muted"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/avenuePriceText"
+                        app:layout_constraintEnd_toStartOf="@id/avenueChevron"
+                        app:layout_constraintTop_toTopOf="@id/avenuePriceText" />
+
+                    <ImageView
+                        android:id="@+id/avenueChevron"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron_right_24"
+                        app:layout_constraintBottom_toBottomOf="@id/avenueDistanceText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/avenueDistanceText"
+                        app:tint="@color/reservation_text" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/aeroParkingCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="132dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/bg_home_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:id="@+id/aeroParkingName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Aero Park"
+                        android:textColor="@color/reservation_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/aeroParkingStatus"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/aeroParkingStatus"
+                        android:layout_width="78dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/bg_home_status"
+                        android:gravity="center"
+                        android:text="18 vagas"
+                        android:textColor="@color/reservation_primary_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/aeroLocationIcon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="14dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_location_pin_24"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/aeroParkingName"
+                        app:tint="@color/reservation_primary" />
+
+                    <TextView
+                        android:id="@+id/aeroAddressText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Rodovia Sul, km 12"
+                        android:textColor="@color/reservation_muted"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/aeroLocationIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/aeroLocationIcon"
+                        app:layout_constraintTop_toTopOf="@id/aeroLocationIcon" />
+
+                    <TextView
+                        android:id="@+id/aeroPriceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:text="R$28,00"
+                        android:textColor="@color/reservation_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/aeroLocationIcon" />
+
+                    <TextView
+                        android:id="@+id/aeroDistanceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3,5 km"
+                        android:textColor="@color/reservation_muted"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/aeroPriceText"
+                        app:layout_constraintEnd_toStartOf="@id/aeroChevron"
+                        app:layout_constraintTop_toTopOf="@id/aeroPriceText" />
+
+                    <ImageView
+                        android:id="@+id/aeroChevron"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_chevron_right_24"
+                        app:layout_constraintBottom_toBottomOf="@id/aeroDistanceText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/aeroDistanceText"
+                        app:tint="@color/reservation_text" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

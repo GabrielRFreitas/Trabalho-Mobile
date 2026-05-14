@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="150dp"
+    android:height="150dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M62,12h116c28,0 50,22 50,50v116c0,28 -22,50 -50,50H62c-28,0 -50,-22 -50,-50V62c0,-28 22,-50 50,-50z"
+        android:strokeWidth="14"
+        android:strokeColor="@color/login_accent" />
+    <path
+        android:fillColor="@color/login_accent"
+        android:pathData="M76,46h62c29,0 49,19 49,47c0,27 -20,46 -49,46h-34v54H76zM104,73v40h32c15,0 25,-8 25,-20c0,-13 -10,-20 -25,-20z" />
+    <path
+        android:fillColor="@color/login_background"
+        android:pathData="M128,207c0,-8 6,-14 14,-14s14,6 14,14s-6,14 -14,14s-14,-6 -14,-14z" />
+    <path
+        android:fillColor="@color/login_accent"
+        android:pathData="M12,178c0,-8 6,-14 14,-16l18,-4l12,-17c9,-14 23,-21 41,-21h43c32,0 55,13 69,36l20,6c7,2 11,8 11,16v20h-25c-4,18 -18,30 -36,30s-32,-12 -36,-30H94c-4,18 -18,30 -36,30s-32,-12 -36,-30H12zM79,156h110c-12,-14 -29,-21 -50,-21H98c-9,0 -16,6 -19,21zM58,174c-9,0 -16,7 -16,16s7,16 16,16s16,-7 16,-16s-7,-16 -16,-16zM179,174c-9,0 -16,7 -16,16s7,16 16,16s16,-7 16,-16s-7,-16 -16,-16z" />
+</vector>

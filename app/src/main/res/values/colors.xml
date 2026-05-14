@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="reservation_header">#176176</color>
+    <color name="reservation_panel">#FFF9F2</color>
+    <color name="reservation_text">#24424B</color>
+    <color name="reservation_muted">#65777D</color>
+    <color name="reservation_outline">#B7C9C6</color>
+    <color name="reservation_primary">#00A978</color>
+    <color name="reservation_primary_dark">#008B68</color>
+    <color name="reservation_selected">#E8FFF6</color>
+    <color name="reservation_danger">#FF3045</color>
+    <color name="reservation_danger_dark">#E02032</color>
+    <color name="login_background">#061C2B</color>
+    <color name="login_surface">#0D2A3C</color>
+    <color name="login_accent">#20D6C3</color>
+    <color name="login_accent_dark">#14B9AA</color>
+    <color name="login_outline">#7AA4B7</color>
+    <color name="login_muted">#9DB4BF</color>
+</resources>
